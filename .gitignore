@@ -39,3 +39,5 @@ Serilog.Sinks.Aliyun/obj/Release/net5.0/refint/Serilog.Sinks.Aliyun.dll
 /.vs
 /Serilog.Sinks.Aliyun/bin/Release
 /Serilog.Sinks.Aliyun/obj/Release
+/Serilog.Sinks.Aliyun/bin/Debug
+/Serilog.Sinks.Aliyun/obj/Debug

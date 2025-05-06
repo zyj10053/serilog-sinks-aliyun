@@ -7,13 +7,13 @@
     <RootNamespace />
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.110</Version>
+    <Version>1.0.103</Version>
     <LangVersion>latest</LangVersion>
     <Authors>ZYJ</Authors>
     <Company>ZYJ</Company>
     <Copyright>Copyright © ZYJ Contributors</Copyright>
     <RepositoryType>git</RepositoryType>
-    <IncludeSymbols>True</IncludeSymbols>
+    <IncludeSymbols>False</IncludeSymbols>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>Serilog sink that writes events to the Seq structured log server</Description>
@@ -45,11 +45,31 @@
       <PackagePath>\lib\net5.0</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="lib\net5.0\Google.ProtocolBuffers.dll">
+      <Pack>True</Pack>
+      <PackagePath>\lib\net5.0</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\net5.0\Google.ProtocolBuffers.Serialization.dll">
+      <Pack>True</Pack>
+      <PackagePath>\lib\net5.0</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\net5.0\LZ4Sharp.dll">
+      <Pack>True</Pack>
+      <PackagePath>\lib\net5.0</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\net5.0\zlibnet.dll">
+      <Pack>True</Pack>
+      <PackagePath>\lib\net5.0</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="SLSSDK">
-      <HintPath>lib\net5.0\SLSSDK.dll</HintPath>
+      <HintPath>SLSSDK.dll</HintPath>
     </Reference>
   </ItemGroup>
 
