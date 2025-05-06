@@ -36,3 +36,6 @@ Serilog.Sinks.Aliyun/obj/Release/net5.0/Serilog.Sinks.Aliyun.pdb
 Serilog.Sinks.Aliyun/obj/Release/net5.0/Serilog.Sinks.Aliyun.xml
 Serilog.Sinks.Aliyun/obj/Release/net5.0/ref/Serilog.Sinks.Aliyun.dll
 Serilog.Sinks.Aliyun/obj/Release/net5.0/refint/Serilog.Sinks.Aliyun.dll
+/.vs
+/Serilog.Sinks.Aliyun/bin/Release
+/Serilog.Sinks.Aliyun/obj/Release

@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>Serilog.Sinks.Aliyun.Core</PackageId>
-    <Version>1.0.102</Version>
+    <Version>1.0.103</Version>
     <Authors>ZYJ</Authors>
     <Company>ZYJ</Company>
     <Copyright>Copyright © ZYJ Contributors</Copyright>
@@ -30,7 +30,7 @@
 
   <ItemGroup>
     <Reference Include="SLSSDK">
-      <HintPath>SLSSDK.dll</HintPath>
+      <HintPath>\Lib\SLSSDK.dll</HintPath>
     </Reference>
   </ItemGroup>
 
@@ -40,9 +40,9 @@
       <PackagePath>\</PackagePath>
     </None>
     
-    <Content Include="SLSSDK.dll">
+    <Content Include="Lib\SLSSDK.dll">
       <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
+      <PackagePath>\Lib</PackagePath>
     </Content>
   </ItemGroup>
 
