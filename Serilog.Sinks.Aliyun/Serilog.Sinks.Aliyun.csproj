@@ -3,18 +3,26 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>zyj10053.serilog-sinks-aliyun</PackageId>
-    <Version>1.0.102</Version>
-    <Authors>zyj</Authors>
-    <Company>zyj</Company>
+    <PackageId>Serilog.Sinks.Aliyun-SLS</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>ZYJ</Authors>
+    <Company>ZYJ</Company>
+    <Copyright>Copyright © ZYJ Contributors</Copyright>
     <RepositoryType>git</RepositoryType>
     <IncludeSymbols>False</IncludeSymbols>
-    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>Serilog sink that writes events to the Seq structured log server</Description>
+    <PackageTags>serilog;aliyun</PackageTags>
+    <PackageProjectUrl>https://github.com/zyj10053/serilog-sinks-aliyun</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/zyj10053/serilog-sinks-aliyun</RepositoryUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />
     <PackageReference Include="Serilog.Sinks.PeriodicBatching" Version="2.3.0" />
@@ -28,9 +36,9 @@
 
   <ItemGroup>
     <None Update="Lib\SLSSDK.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Update="Readme.md">
+    <None Update="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
