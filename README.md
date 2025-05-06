@@ -4,10 +4,10 @@ A Serilog sink that writes events to the [Aliyun SLS].
 
 ### Getting started
 
-Install _Serilog.Sinks.Aliyun_NetCore5 into your .NET project:
+Install Serilog.Sinks.Aliyun.Core into your .NET project:
 
 ```powershell
-> dotnet add package Serilog.Sinks.Aliyun_NetCore5
+> dotnet add package Serilog.Sinks.Aliyun.Core
 ```
 
 Point the logger to Aliyun:
