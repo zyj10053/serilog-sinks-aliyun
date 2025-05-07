@@ -7,7 +7,7 @@
     <RootNamespace />
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.103</Version>
+    <Version>1.0.104</Version>
     <LangVersion>latest</LangVersion>
     <Authors>ZYJ</Authors>
     <Company>ZYJ</Company>
@@ -24,8 +24,16 @@
     <GenerateAssemblyVersionAttribute>true</GenerateAssemblyVersionAttribute>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
+    <NoWarn>1701;1702;CS1591;CS1573;CS8625;CS8604;CS8603;CS8600;CS8602;CS8601;CS8605;</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0|AnyCPU'">
+    <NoWarn>1701;1702;CS1591;CS1573;CS8625;CS8604;CS8603;CS8600;CS8602;CS8601;CS8605;MSB3277;</NoWarn>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
+    <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" NoWarn="NU1604;NU1701;NU1903;" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="5.0.0" />

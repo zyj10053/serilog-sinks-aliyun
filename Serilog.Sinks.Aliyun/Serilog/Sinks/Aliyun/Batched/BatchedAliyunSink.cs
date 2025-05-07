@@ -66,12 +66,12 @@ namespace Serilog.Sinks.Aliyun.Batched
             var logs = new List<LogItem>();
             foreach (var logEvent in batch)
             {
-                List<LogContent> contents = new List<LogContent>
-                {
-                    new LogContent("Timestamp", logEvent.Timestamp.ToString("yyyy-MM-dd HH:mm:ss.fff zzz")),
-                    new LogContent("Level", logEvent.Level.ToString()),
-                    new LogContent("RenderedMessage",logEvent.RenderMessage())
-                };
+                List<LogContent> contents =
+                [
+                    new("Timestamp", logEvent.Timestamp.ToString("yyyy-MM-dd HH:mm:ss.fff zzz")),
+                    new("Level", logEvent.Level.ToString()),
+                    new("RenderedMessage",logEvent.RenderMessage())
+                ];
                 if (logEvent.Exception != null)
                 {
                     contents.Add(new LogContent("Exception", StringHelper.ConvertTo(logEvent.Exception.ToString())));

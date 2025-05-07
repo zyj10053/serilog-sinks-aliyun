@@ -26,20 +26,17 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <returns></returns>
         public static long ToTimestamp(this DateTime date, int unit = 0)
         {
-            switch (unit)
+            return unit switch
             {
-                case 0:
-                    return (date.ToUniversalTime().Ticks - 621355968000000000) / 10000000;
-                case 1:
-                    return (date.ToUniversalTime().Ticks - 621355968000000000) / 10000;
-            }
-
-            return 0;
+                0 => (date.ToUniversalTime().Ticks - 621355968000000000) / 10000000,
+                1 => (date.ToUniversalTime().Ticks - 621355968000000000) / 10000,
+                _ => 0,
+            };
         }
 
         public static Dictionary<string, object> ToDictionary(this object obj)
         {
-            Dictionary<string, object> data = new Dictionary<string, object>();
+            Dictionary<string, object> data = [];
             Type type = obj.GetType();
             foreach (PropertyInfo fieldinfo in type.GetProperties())
             {
@@ -104,7 +101,7 @@ namespace Serilog.Sinks.Aliyun.Convert
         {
             if (obj == null)
             {
-                return default(T);
+                return default;
             }
 
             T model = Activator.CreateInstance<T>();
@@ -227,7 +224,6 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <summary>
         /// DataTable转换成List(属性)
         /// </summary>
-        /// <typeparam name="T">泛型类型</typeparam>
         /// <param name="dt">表</param>
         /// <returns>泛型List</returns>
         public static object DataTableToList(Type listType, DataTable dt)
@@ -254,7 +250,7 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <summary>
         /// DataRow转换成实体(属性)
         /// </summary>
-        /// <typeparam name="T">泛型类型</typeparam>
+        /// <param name="type">泛型类型</param>
         /// <param name="dr">数据行</param>
         /// <returns>泛型实例</returns>
         public static object DataRowToEntiy(Type type, DataRow dr)
@@ -317,7 +313,7 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// </summary>
         /// <typeparam name="T">当前对象</typeparam>
         /// <param name="fObj"></param>
-        /// <param name="tObj"></param>
+        /// <param name="t"></param>
         public static T CopyTo<T>(this object fObj, T t = default)
         {
             if (fObj == null)
@@ -416,17 +412,16 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <returns></returns>
         public static int ToInt(this object obj)
         {
-            int result = 0;
             if (obj == null)
                 return 0;
-            int.TryParse(obj.ToString(), out result);
+            int.TryParse(obj.ToString(), out int result);
             return result;
         }
 
         /// <summary>
         /// 列数据转换为DateTime类型
         /// </summary>
-        /// <param name="dr"></param>
+        /// <param name="i"></param>
         /// <returns>返回Int类型数据</returns>
         public static DateTime? ToDateTime(this object i)
         {
@@ -447,9 +442,9 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <returns>返回decimal类型</returns>
         public static decimal ToDecimal(this object obj)
         {
-            decimal result = 0;
             if (obj == null)
                 return 0;
+            decimal result;
             decimal.TryParse(obj.ToString(), out result);
             return result;
         }
@@ -461,9 +456,9 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <returns></returns>
         public static long ToLong(this object obj)
         {
-            long result = 0;
             if (obj == null)
                 return 0;
+            long result;
             long.TryParse(obj.ToString(), out result);
             return result;
         }
@@ -475,9 +470,9 @@ namespace Serilog.Sinks.Aliyun.Convert
         /// <returns></returns>
         public static bool ToBool(this object obj)
         {
-            bool result = false;
             if (obj == null)
                 return false;
+            bool result;
             bool.TryParse(obj.ToString(), out result);
             return result;
         }

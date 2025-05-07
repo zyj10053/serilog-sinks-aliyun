@@ -1,14 +1,9 @@
 ﻿using Newtonsoft.Json;
 using Serilog.Events;
 using Serilog.Formatting.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Serilog.Sinks.Aliyun.Helper
 {
@@ -105,7 +100,6 @@ namespace Serilog.Sinks.Aliyun.Helper
         /// DES解密
         /// </summary>
         /// <param name="decryptoContext">待解密字符串</param>
-        /// <param name="cryptoKey">加密Key</param>
         /// <returns>解密后字符串</returns>
         public static string DESDecrypt(string decryptoContext)
         {
