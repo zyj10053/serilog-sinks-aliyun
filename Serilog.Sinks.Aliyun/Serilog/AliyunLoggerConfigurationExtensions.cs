@@ -105,7 +105,7 @@ namespace Serilog
             var batchingOptions = new PeriodicBatchingSinkOptions
             {
                 BatchSizeLimit = batchPostingLimit,
-                Period = TimeSpan.FromSeconds(2),
+                Period = defaultedPeriod,
                 EagerlyEmitFirstEvent = true,
                 QueueLimit = queueSizeLimit
             };

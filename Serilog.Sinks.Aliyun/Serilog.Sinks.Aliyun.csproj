@@ -7,7 +7,7 @@
     <RootNamespace />
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>1.0.104</Version>
+    <Version>1.0.105</Version>
     <LangVersion>latest</LangVersion>
     <Authors>ZYJ</Authors>
     <Company>ZYJ</Company>
@@ -25,7 +25,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0|AnyCPU'">
-    <NoWarn>1701;1702;CS1591;CS1573;CS8625;CS8604;CS8603;CS8600;CS8602;CS8601;CS8605;</NoWarn>
+    <NoWarn>1701;1702;CS1591;CS1573;CS8625;CS8604;CS8603;CS8600;CS8602;CS8601;CS8605;MSB3277;</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net5.0|AnyCPU'">
@@ -66,6 +66,13 @@
       <PackagePath>\lib\net5.0</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
